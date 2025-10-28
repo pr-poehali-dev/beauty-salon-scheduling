@@ -106,8 +106,8 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-secondary/20 to-background">
-      <nav className="sticky top-0 z-50 backdrop-blur-lg bg-background/80 border-b border-border">
+    <div className="min-h-screen bg-background">
+      <nav className="sticky top-0 z-50 bg-background border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-3xl font-bold text-primary">Три колориста</h1>
@@ -139,8 +139,8 @@ const Index = () => {
 
       <section id="home" className="py-20 px-4 animate-fade-in">
         <div className="container mx-auto text-center max-w-4xl">
-          <Badge className="mb-4 px-6 py-2 text-sm" variant="secondary">
-            Премиальный уход за собой
+          <Badge className="mb-6 px-4 py-1.5 text-xs font-medium uppercase tracking-wider" variant="secondary">
+            Премиальный салон
           </Badge>
           <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">
             Ваша красота —<br />наше искусство
@@ -161,7 +161,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-4 bg-secondary/30">
+      <section id="services" className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Наши услуги</h2>
@@ -178,8 +178,8 @@ const Index = () => {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <Icon name={service.icon} className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center mb-4">
+                    <Icon name={service.icon} className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <h3 className="text-2xl font-semibold mb-2">{service.title}</h3>
                   <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
@@ -215,7 +215,7 @@ const Index = () => {
               Выберите удобное время для посещения салона
             </p>
           </div>
-          <Card className="shadow-2xl">
+          <Card className="border-2">
             <CardContent className="p-8">
               <form onSubmit={handleBooking}>
                 <div className="space-y-6">
@@ -298,7 +298,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="gallery" className="py-20 px-4 bg-secondary/30">
+      <section id="gallery" className="py-20 px-4 bg-secondary">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Галерея работ</h2>
