@@ -106,11 +106,11 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <nav className="sticky top-0 z-50 bg-background border-b border-border">
+    <div className="min-h-screen bg-gradient-to-b from-background via-secondary/30 to-background">
+      <nav className="sticky top-0 z-50 backdrop-blur-md bg-background/95 border-b border-primary/20">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-primary">Три колориста</h1>
+            <h1 className="text-3xl font-bold text-primary tracking-wide">ТРИ КОЛОРИСТА</h1>
             <div className="hidden md:flex gap-6">
               {[
                 { id: "home", label: "Главная" },
@@ -139,9 +139,9 @@ const Index = () => {
 
       <section id="home" className="py-20 px-4 animate-fade-in">
         <div className="container mx-auto text-center max-w-4xl">
-          <Badge className="mb-6 px-4 py-1.5 text-xs font-medium uppercase tracking-wider" variant="secondary">
-            Премиальный салон
-          </Badge>
+          <div className="mb-6 inline-flex items-center gap-2 px-6 py-2 border border-primary/30 rounded-sm">
+            <span className="text-xs font-light uppercase tracking-[0.2em] text-primary">Премиальный салон</span>
+          </div>
           <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">
             Ваша красота —<br />наше искусство
           </h2>
@@ -174,12 +174,12 @@ const Index = () => {
             {services.map((service, index) => (
               <Card
                 key={service.id}
-                className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-scale-in"
+                className="hover:shadow-2xl hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 animate-scale-in border border-border"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center mb-4">
-                    <Icon name={service.icon} className="w-6 h-6 text-primary-foreground" />
+                  <div className="w-14 h-14 rounded-sm bg-gradient-to-br from-primary to-amber-600 flex items-center justify-center mb-4 shadow-lg">
+                    <Icon name={service.icon} className="w-7 h-7 text-foreground" />
                   </div>
                   <h3 className="text-2xl font-semibold mb-2">{service.title}</h3>
                   <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
@@ -215,7 +215,7 @@ const Index = () => {
               Выберите удобное время для посещения салона
             </p>
           </div>
-          <Card className="border-2">
+          <Card className="border border-primary/20 shadow-xl">
             <CardContent className="p-8">
               <form onSubmit={handleBooking}>
                 <div className="space-y-6">
@@ -298,7 +298,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="gallery" className="py-20 px-4 bg-secondary">
+      <section id="gallery" className="py-20 px-4 bg-gradient-to-b from-secondary/50 to-background">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Галерея работ</h2>
