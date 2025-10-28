@@ -110,7 +110,7 @@ const Index = () => {
       <nav className="sticky top-0 z-50 backdrop-blur-lg bg-background/80 border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-primary">Belle Étoile</h1>
+            <h1 className="text-3xl font-bold text-primary">Три колориста</h1>
             <div className="hidden md:flex gap-6">
               {[
                 { id: "home", label: "Главная" },
@@ -148,7 +148,7 @@ const Index = () => {
           <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
             Профессиональные косметологические услуги в элегантной атмосфере.
             <br />
-            Раскройте свою природную красоту с Belle Étoile.
+            Раскройте свою природную красоту с «Три колориста».
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Button size="lg" onClick={() => scrollToSection("booking")} className="text-base">
