@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar } from "@/components/ui/calendar";
@@ -20,6 +20,24 @@ const Index = () => {
   const [selectedService, setSelectedService] = useState<string>("");
   const [activeSection, setActiveSection] = useState<string>("home");
   const { toast } = useToast();
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll(".scroll-animate");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const services = [
     {
@@ -163,7 +181,7 @@ const Index = () => {
 
       <section id="services" className="py-20 px-4 bg-gradient-to-br from-pink-50 via-purple-50 to-background">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 scroll-animate">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Наши услуги</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Индивидуальный подход к каждому клиенту и использование
@@ -174,8 +192,8 @@ const Index = () => {
             {services.map((service, index) => (
               <Card
                 key={service.id}
-                className="hover:shadow-2xl hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 animate-scale-in border border-border"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="scroll-animate hover:shadow-2xl hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 border border-border"
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-6">
                   <div className="w-14 h-14 rounded-sm bg-gradient-to-br from-primary to-amber-600 flex items-center justify-center mb-4 shadow-lg">
@@ -209,13 +227,13 @@ const Index = () => {
 
       <section id="booking" className="py-20 px-4 bg-gradient-to-br from-background via-indigo-50 to-purple-100">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 scroll-animate">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Онлайн запись</h2>
             <p className="text-muted-foreground text-lg">
               Выберите удобное время для посещения салона
             </p>
           </div>
-          <Card className="border border-primary/20 shadow-xl">
+          <Card className="scroll-animate border border-primary/20 shadow-xl">
             <CardContent className="p-8">
               <form onSubmit={handleBooking}>
                 <div className="space-y-6">
@@ -300,7 +318,7 @@ const Index = () => {
 
       <section id="gallery" className="py-20 px-4 bg-gradient-to-br from-purple-100 via-violet-50 to-fuchsia-50">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 scroll-animate">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Галерея работ</h2>
             <p className="text-muted-foreground text-lg">
               Результаты наших мастеров говорят сами за себя
@@ -310,7 +328,7 @@ const Index = () => {
             {galleryImages.map((img, index) => (
               <Dialog key={index}>
                 <DialogTrigger asChild>
-                  <div className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group">
+                  <div className="scroll-animate relative aspect-square overflow-hidden rounded-lg cursor-pointer group">
                     <img
                       src={img}
                       alt={`Работа ${index + 1}`}
@@ -334,7 +352,7 @@ const Index = () => {
 
       <section id="reviews" className="py-20 px-4 bg-gradient-to-br from-fuchsia-50 via-pink-50 to-purple-100">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 scroll-animate">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Отзывы клиентов</h2>
             <p className="text-muted-foreground text-lg">
               Что говорят о нас наши клиенты
@@ -344,8 +362,8 @@ const Index = () => {
             {reviews.map((review, index) => (
               <Card
                 key={index}
-                className="animate-scale-in"
-                style={{ animationDelay: `${index * 150}ms` }}
+                className="scroll-animate"
+                style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <CardContent className="p-6">
                   <div className="flex gap-1 mb-4">
