@@ -137,7 +137,7 @@ const Index = () => {
         </div>
       </nav>
 
-      <section id="home" className="py-20 px-4 animate-fade-in">
+      <section id="home" className="py-20 px-4 animate-fade-in bg-gradient-to-br from-background via-purple-100 to-pink-50">
         <div className="container mx-auto text-center max-w-4xl">
           <div className="mb-6 inline-flex items-center gap-2 px-6 py-2 border border-primary/30 rounded-sm">
             <span className="text-xs font-light uppercase tracking-[0.2em] text-primary">Премиальный салон</span>
@@ -161,7 +161,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-4">
+      <section id="services" className="py-20 px-4 bg-gradient-to-br from-pink-50 via-purple-50 to-background">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Наши услуги</h2>
@@ -207,7 +207,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="booking" className="py-20 px-4">
+      <section id="booking" className="py-20 px-4 bg-gradient-to-br from-background via-indigo-50 to-purple-100">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Онлайн запись</h2>
@@ -298,7 +298,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="gallery" className="py-20 px-4 bg-gradient-to-b from-secondary/50 to-background">
+      <section id="gallery" className="py-20 px-4 bg-gradient-to-br from-purple-100 via-violet-50 to-fuchsia-50">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Галерея работ</h2>
@@ -332,7 +332,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="reviews" className="py-20 px-4">
+      <section id="reviews" className="py-20 px-4 bg-gradient-to-br from-fuchsia-50 via-pink-50 to-purple-100">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Отзывы клиентов</h2>
@@ -367,11 +367,11 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="py-12 px-4 border-t border-border bg-secondary/20">
+      <footer className="py-12 px-4 border-t border-border bg-gradient-to-br from-purple-100 to-background">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-primary">Belle Étoile</h3>
+              <h3 className="text-2xl font-bold mb-4 text-primary">Три колориста</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Косметологический салон премиум-класса
                 <br />
